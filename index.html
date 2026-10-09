@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Pavan | Cybersecurity Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #08090b;
+  --panel: #111318;
+  --green: #c7ff5e;
+  --purple: #a78bfa;
+  --muted: #a0a3ad;
+  --white: #f6f7f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logo span { color: var(--green); }
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav-links a:hover { color: var(--green); }
+
+.contact-btn {
+  padding: 11px 17px;
+  border: 1px solid #c7ff5e66;
+  border-radius: 30px;
+  color: var(--green);
+  transition: .3s;
+}
+
+.contact-btn:hover {
+  background: var(--green);
+  color: #08090b;
+}
+
+.hero {
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 30px;
+  padding: 75px 0;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(46px, 6.5vw, 83px);
+  line-height: 1.02;
+  letter-spacing: -4px;
+}
+
+h1 span {
+  color: var(--green);
+}
+
+.hero p {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 25px 0 30px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.primary-btn {
+  background: var(--green);
+  color: #0b0d08;
+  padding: 14px 21px;
+  border-radius: 30px;
+  font-weight: 700;
+  display: inline-block;
+  transition: .3s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px #c7ff5e40;
+}
+
+.secondary-btn {
+  border: 1px solid #ffffff30;
+  padding: 14px 21px;
+  border-radius: 30px;
+  color: var(--white);
+}
+
+.visual {
+  min-height: 440px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.orbit {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border: 1px solid #c7ff5e30;
+  border-radius: 50%;
+  animation: rotate 18s linear infinite;
+}
+
+.orbit.two {
+  width: 260px;
+  height: 390px;
+  border-color: #a78bfa55;
+  transform: rotate(55deg);
+  animation-duration: 23s;
+}
+
+.orbit::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  position: absolute;
+  top: 38px;
+  left: 40px;
+  box-shadow: 0 0 20px var(--green);
+}
+
+.orbit.two::before {
+  background: var(--purple);
+  box-shadow: 0 0 20px var(--purple);
+}
+
+.core {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d9ff9c, #73bd4a 35%, #443b7e 70%, #15151d);
+  box-shadow: 0 0 80px #9cfa5940, inset -15px -20px 35px #07080d;
+  display: grid;
+  place-items: center;
+  font-size: 68px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-card {
+  position: absolute;
+  background: #17191fe8;
+  border: 1px solid #ffffff18;
+  border-radius: 14px;
+  padding: 15px 18px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 45px #0005;
+}
+
+.float-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+.float-card strong {
+  font-size: 15px;
+}
+
+.card-one { top: 48px; right: 0; }
+.card-two { bottom: 60px; left: 0; }
+.green-text { color: var(--green); }
+.purple-text { color: var(--purple); }
+
+.section {
+  padding: 100px 0;
+  border-top: 1px solid #ffffff12;
+}
+
+.section-label {
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.section-intro {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 650px;
+  margin-bottom: 38px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #ffffff12;
+  border-radius: 20px;
+  padding: 27px;
+  transition: .35s;
+}
+
+.panel:hover {
+  transform: translateY(-6px);
+  border-color: #c7ff5e65;
+  background: #151820;
+}
+
+.panel-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #c7ff5e12;
+  color: var(--green);
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+
+.panel h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.panel p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.tag {
+  padding: 8px 12px;
+  border: 1px solid #ffffff1c;
+  border-radius: 30px;
+  color: #d4d5dc;
+  font-size: 12px;
+}
+
+.project-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 34px;
+  color: var(--purple);
+  margin-bottom: 24px;
+}
+
+.timeline {
+  border-left: 1px solid #c7ff5e60;
+  margin-left: 8px;
+  padding-left: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 14px #c7ff5e90;
+}
+
+.timeline-item h3 { margin-bottom: 8px; }
+
+.timeline-item .date {
+  color: var(--green);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 750px;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 100px 0 70px;
+  background: radial-gradient(ellipse at center bottom, #352b6230, transparent 60%);
+}
+
+.contact-section p {
+  color: var(--muted);
+  margin: 15px auto 28px;
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  padding: 12px 17px;
+  border: 1px solid #ffffff20;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+.contact-links a:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+footer {
+  border-top: 1px solid #ffffff12;
+  text-align: center;
+  padding: 24px 0;
+  color: #777b85;
+  font-size: 12px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-13px); }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+  }
+
+  .visual { min-height: 390px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { display: none; }
+  h1 { letter-spacing: -2px; }
+}
+
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .visual { transform: scale(.88); margin: -20px 0; }
+  .section { padding: 70px 0; }
+  .float-card { padding: 12px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <nav>
+    <a href="#" class="logo">SP<span>.</span></a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+    </div>
+
+    <a class="contact-btn" href="#contact">Let's Connect ↗</a>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Cybersecurity · Digital Forensics</div>
+      <h1>Securing the<br>digital <span>world.</span></h1>
+
+      <p>
+        Hi, I'm Sri Pavan — a Cyber Security and Digital Forensics
+        postgraduate student passionate about threat detection,
+        forensic investigations, and digital security.
+      </p>
+
+      <div class="actions">
+        <a class="primary-btn" href="#projects">Explore My Work ↗</a>
+        <a class="secondary-btn" href="#contact">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="orbit"></div>
+      <div class="orbit two"></div>
+      <div class="core">⌘</div>
+
+      <div class="float-card card-one">
+        <small>AREA OF INTEREST</small>
+        <strong class="green-text">Threat Detection</strong>
+      </div>
+
+      <div class="float-card card-two">
+        <small>FOCUS</small>
+        <strong class="purple-text">Digital Forensics</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="about">
+    <div class="section-label">01 / About Me</div>
+    <h2>Curious mind. Security-first thinking.</h2>
+    <p class="section-intro">
+      I am pursuing an M.Sc. in Cyber Security and Digital Forensics.
+      My interests include security monitoring, network analysis,
+      forensic evidence examination, and understanding how digital
+      attacks happen so systems can be better protected.
+    </p>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="panel-icon">⌕</div>
+        <h3>Security Analysis</h3>
+        <p>Exploring network traffic, security events, vulnerabilities, and suspicious activity.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-icon">◈</div>
+        <h3>Digital Forensics</h3>
+        <p>Learning evidence acquisition, examination, file recovery, and forensic documentation.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-icon">⌘</div>
+        <h3>Continuous Learning</h3>
+        <p>Building practical skills through cybersecurity labs, projects, and professional learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="skills">
+    <div class="section-label">02 / Technical Skills</div>
+    <h2>Tools of my trade.</h2>
+    <p class="section-intro">
+      Tools and technical areas I have studied or used during practical learning.
+    </p>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="panel-icon">⌘</div>
+        <h3>Security Tools</h3>
+        <p>Network scanning, web application testing, packet inspection, and log monitoring.</p>
+        <div class="tags">
+          <span class="tag">Nmap</span>
+          <span class="tag">Burp Suite</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">Splunk</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-icon">◉</div>
+        <h3>Forensic Tools</h3>
+        <p>Digital evidence examination, forensic imaging, hex analysis, and media analysis.</p>
+        <div class="tags">
+          <span class="tag">FTK Imager</span>
+          <span class="tag">Autopsy</span>
+          <span class="tag">HxD</span>
+          <span class="tag">Amped FIVE</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-icon">⌨</div>
+        <h3>Technical Foundations</h3>
+        <p>Basic programming, web technologies, evidence reporting, and analytical documentation.</p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">Python Basics</span>
+          <span class="tag">SQL Basics</span>
+          <span class="tag">Log Analysis</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="projects">
+    <div class="section-label">03 / Selected Projects</div>
+    <h2>Learning through building.</h2>
+    <p class="section-intro">
+      Practical projects focused on programming fundamentals and digital integrity.
+    </p>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="project-number">01</div>
+        <h3>Binary-to-Decimal Converter</h3>
+        <p>A learning project for converting binary numbers into decimal values, developed with AI assistance.</p>
+        <div class="tags">
+          <span class="tag">Number Systems</span>
+          <span class="tag">AI-Assisted</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="project-number">02</div>
+        <h3>Hash Value Verification Tool</h3>
+        <p>A project exploring hash values and how they can help verify whether digital data has changed.</p>
+        <div class="tags">
+          <span class="tag">Hashing</span>
+          <span class="tag">Data Integrity</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="project-number">03</div>
+        <h3>Forensic Evidence Analysis</h3>
+        <p>Practical internship experience using forensic tools to examine evidence and document findings.</p>
+        <div class="tags">
+          <span class="tag">FTK Imager</span>
+          <span class="tag">Autopsy</span>
+          <span class="tag">Documentation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="experience">
+    <div class="section-label">04 / Experience & Education</div>
+    <h2>My journey so far.</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">MAY 2026 — JULY 2026</div>
+        <h3>Cybersecurity & Digital Forensics Intern · TALFOR</h3>
+        <p>
+          Worked with FTK Imager and Autopsy for evidence examination
+          and forensic analysis, explored web applications and basic
+          web security, and documented observations and findings.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">AUG 2025 — PRESENT</div>
+        <h3>M.Sc. Cyber Security & Digital Forensics</h3>
+        <p>Aditya University · CGPA: 8.85</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">DEC 2021 — JUN 2024</div>
+        <h3>B.Sc. Computer Science</h3>
+        <p>Aditya Degree College · CGPA: 7.2</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">JUN 2019 — MAY 2021</div>
+        <h3>MPC · Intermediate</h3>
+        <p>Sri Chaitanya Junior College · CGPA: 6.7</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-label">05 / Certifications & Activities</div>
+    <h2>Learning beyond the classroom.</h2>
+
+    <div class="grid">
+      <div class="panel">
+        <h3>Cybersecurity Certifications</h3>
+        <div class="tags">
+          <span class="tag">Cisco — Introduction to Cyber Security</span>
+          <span class="tag">SOC Fundamentals — CyberExam</span>
+          <span class="tag">Deloitte Cyber Job Simulation — Forage</span>
+          <span class="tag">Cyber Security & Digital Forensics — Talfor</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Workshops & Conferences</h3>
+        <p>
+          Participated in BOOTAMP-CPE on IT Auditing and GRC.
+          Presented a poster titled “Cryptography Backdoors:
+          Security vs Surveillance”.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Current Interests</h3>
+        <p>
+          Security operations, digital investigations, vulnerability
+          assessment, data integrity, and practical cybersecurity labs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section reveal" id="contact">
+    <div class="section-label">06 / Contact</div>
+    <h2>Let's build a safer digital world.</h2>
+    <p>
+      Looking for cybersecurity internships, learning opportunities,
+      and professional connections.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:kadiyalasripavan@gmail.com">✉ Email Me</a>
+      <a href="tel:+918688108784">☎ Call Me</a>
+      <a href="https://www.linkedin.com/in/sri-pavan-918916267/"
+         target="_blank" rel="noopener noreferrer">↗ LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Sri Pavan · Cybersecurity & Digital Forensics
+  </footer>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((element) => {
+  observer.observe(element);
+});
+</script>
+</body>
+</html>
